@@ -1,0 +1,8 @@
+@import "../../../styles/lib.scss";
+
+.page-template {
+  max-width: $contents-section-max-width;
+  padding: $contents-section-padding;
+  display: flex;
+  flex-direction: column;
+}

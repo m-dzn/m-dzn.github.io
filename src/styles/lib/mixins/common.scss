@@ -1,0 +1,15 @@
+@mixin font-face($family-name, $file-name, $weight: 400, $style: normal) {
+    @font-face {
+        font-family: '#{$family-name}';
+        font-weight: $weight;
+        font-style: $style;
+        src: local('#{$file-name}'), url('./fonts/#{$file-name}.otf') format('opentype');
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}

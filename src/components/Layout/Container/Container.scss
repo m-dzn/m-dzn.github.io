@@ -1,0 +1,11 @@
+@import "../../../styles/lib.scss";
+
+#container {
+  max-width: $board-max-width;
+  margin: $spacing-lg auto 0 auto;
+  padding: 0 $spacing-md;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

@@ -1,31 +1,17 @@
+const plugins = require("./gatsby-config.plugins");
+
+const siteMetadata = {
+  title: "Mechanism Design",
+  author: {
+    name: `Kyeongho Yang`,
+    summary: `요약`,
+  },
+  description: `한 줄 설명`,
+  siteUrl: `https://jamongjelly.github.io`,
+};
+
 module.exports = {
-    siteMetadata: {
-        title: 'JamongJelly Blog',
-    },
-    plugins: [
-        'gatsby-plugin-sass',
-        'gatsby-plugin-gatsby-cloud',
-        'gatsby-plugin-image',
-        'gatsby-plugin-react-helmet',
-        'gatsby-transformer-remark',
-        'gatsby-plugin-mdx',
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp',
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'images',
-                path: './src/images/',
-            },
-            __key: 'images',
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'pages',
-                path: './src/pages/',
-            },
-            __key: 'pages',
-        },
-    ],
+  pathPrefix: "",
+  siteMetadata,
+  plugins,
 };

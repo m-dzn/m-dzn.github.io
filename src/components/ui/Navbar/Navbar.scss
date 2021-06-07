@@ -1,0 +1,51 @@
+@import "../../../styles/lib.scss";
+
+.navbar {
+  background-color: $color-surface;
+
+  height: $navbar-height;
+  padding: 0 $spacing-lg;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  border-top-right-radius: $board-border-radius;
+  border-top-left-radius: $board-border-radius;
+}
+
+.nav-menu {
+  width: $navbar-width;
+  height: $nav-menu-height;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu__item {
+  width: $nav-menu-item-width;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    color: inherit;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: $font-weight-bold;
+
+    &:hover {
+      color: $color-brand-primary;
+    }
+  }
+}

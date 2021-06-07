@@ -1,0 +1,14 @@
+@import "../../../styles/lib.scss";
+
+.dash-board {
+  background-color: $color-surface;
+
+  width: 100%;
+
+  display: flex;
+
+  border-radius: $board-border-radius;
+  border-top-right-radius: 0;
+
+  overflow: hidden;
+}

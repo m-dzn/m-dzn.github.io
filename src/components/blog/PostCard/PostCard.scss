@@ -1,0 +1,29 @@
+@import "../../../styles/lib.scss";
+
+.post-card {
+}
+
+.post-card__thumbnail {
+  background-image: url("https://images.unsplash.com/photo-1623038868323-7d39ec58eefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  margin-bottom: $spacing-md;
+  padding-bottom: 56.25%;
+  border-radius: $post-card-border-radius;
+
+  box-shadow: $shadow-level2;
+}
+
+.post-card__title {
+  margin: 0;
+  margin-top: $spacing-xs;
+  &:hover {
+    color: $color-brand-primary;
+  }
+}
+
+.post-card__content {
+  margin-top: $spacing-xs;
+}

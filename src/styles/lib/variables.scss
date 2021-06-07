@@ -1,0 +1,142 @@
+/* ----------------------------------------
+                   Common
+----------------------------------------*/
+$unit: 0.4rem;
+
+/* ----------------------------------------
+                   Colors
+----------------------------------------*/
+// Primary
+$color-brand-primary: rgb(240, 86, 81);
+$color-brand-primary-dark: rgba(61, 58, 139, 1);
+$color-brand-primary-light: rgba(166, 160, 204, 1);
+
+// Secondary
+$color-brand-secondary: rgba(110, 205, 195, 1);
+$color-brand-secondary-dark: rgba(0, 168, 152, 1);
+$color-brand-secondary-light: rgba(170, 224, 219, 1);
+
+// Gray Scale
+$color-gray-100: rgba(245, 245, 245, 1);
+$color-gray-200: rgba(238, 238, 238, 1);
+$color-gray-300: rgba(213, 213, 213, 1);
+$color-gray-400: rgba(189, 189, 189, 1);
+$color-gray-500: rgba(153, 153, 153, 1);
+$color-gray-600: rgba(118, 118, 118, 1);
+$color-gray-700: rgba(92, 92, 92, 1);
+$color-gray-800: rgba(75, 75, 75, 1);
+$color-gray-900: rgba(51, 51, 51, 1);
+
+// Primitive
+$color-primitive-black: rgba(0, 0, 0, 1);
+$color-primitive-blue: rgba(79, 134, 198, 1);
+$color-primitive-green: rgba(58, 197, 105, 1);
+$color-primitive-red: rgba(249, 50, 12, 1);
+$color-primitive-white: rgba(255, 255, 255, 1);
+$color-primitive-yellow: rgba(248, 202, 0, 1);
+
+/* Colors: Alias Tokens */
+// Background
+$color-background: $color-gray-200;
+$color-background-primary: $color-brand-primary;
+$color-background-secondary: $color-brand-secondary;
+
+// Surface
+$color-surface: $color-primitive-white;
+
+// System
+$color-success: $color-primitive-green;
+$color-error: $color-primitive-red;
+$color-warning: $color-primitive-yellow;
+$color-info: $color-primitive-blue;
+
+// Line
+$color-line-default: $color-primitive-black;
+$color-line-gray: $color-gray-600;
+$color-line-gray-light: $color-gray-400;
+
+// Font
+$color-font-default: $color-primitive-black;
+$color-font-gray: $color-gray-800;
+$color-font-gray-light: $color-gray-600;
+$color-font-white: $color-primitive-white;
+
+/* ----------------------------------------
+                   Fonts
+----------------------------------------*/
+// font-size
+$font-size-h1: 4.8rem;
+$font-size-h2: 4rem;
+$font-size-h3: 3.2rem;
+$font-size-h4: 2.4rem;
+$font-size-h5: 2rem;
+$font-size-h6: 1.6rem;
+$font-size-lg: 2rem;
+$font-size-nl: 1.6rem;
+$font-size-sm: 1.3rem;
+
+// font-weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// letter
+$letter-spacing: 0.02em;
+
+// line-height
+$line-height-none: 1;
+$line-height-tight: 1.4;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.6;
+
+/* ----------------------------------------
+                  Shadow
+----------------------------------------*/
+$shadow-level1: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+$shadow-level2: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+
+/* ----------------------------------------
+                  Spacing
+----------------------------------------*/
+$spacing-xl: 6.4rem;
+$spacing-lg: 3.2rem;
+$spacing-md: 2.4rem;
+$spacing-sm: 1.6rem;
+$spacing-xs: 0.8rem;
+
+/* ----------------------------------------
+                  Grid
+----------------------------------------*/
+$grid-column-number: 6;
+$grid-gutter: $unit * 5;
+$grid-column: 7rem;
+$grid-row-height: 50rem;
+/* ----------------------------------------
+                Mark Down
+----------------------------------------*/
+$blockquote-label-width: $unit * 2;
+
+/* ----------------------------------------
+              UI Components
+----------------------------------------*/
+// Dashboard
+$board-max-width: 132rem;
+$board-border-radius: $spacing-lg;
+
+// Navbar
+$navbar-width: $unit * 100;
+$navbar-height: $unit * 15;
+$nav-menu-height: $unit * 10;
+$nav-menu-item-width: $unit * 25;
+
+// Sidebar
+$sidebar-width: 30rem;
+$sidebar-avatar-width: $unit * 50;
+$sidebar-avatar-border-radius: $unit * 12;
+
+// Contents Section
+$contents-section-max-width: $board-max-width - $sidebar-width;
+$contents-section-padding: $spacing-lg $spacing-lg 0 0;
+
+// Post
+$post-card-border-radius: $spacing-sm;
