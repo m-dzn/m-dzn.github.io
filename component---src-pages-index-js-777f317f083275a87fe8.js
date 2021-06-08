@@ -1,2 +1,0 @@
-(self.webpackChunkjamong_jelly_blog=self.webpackChunkjamong_jelly_blog||[]).push([[678],{7704:function(e,l,n){"use strict";n.r(l);var t=n(7294);l.default=function(){return t.createElement("main",null,t.createElement("h1",null,"JamongJelly Blog"),t.createElement("p",null,"20201-06-06 시작"))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-777f317f083275a87fe8.js.map
