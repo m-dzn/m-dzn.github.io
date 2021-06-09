@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // Define a template for blog post
-  const blogPostTemplate = path.resolve(`./src/pages/templates/BlogPost.tsx`);
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
 
   // MarkDown으로 쓴 모든 Post를 시간 순으로 정렬해 불러옵니다.
   // (YAML Front-matter 기준)
@@ -63,8 +63,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: blogPostTemplate,
         context: {
           id: edge.node.id,
-          previousPostId: edge.previous.id,
-          nextPostId: edge.next.id,
+          previousPostId: edge.previous?.id,
+          nextPostId: edge.next?.id,
         },
       });
     });
@@ -125,4 +125,20 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
     }
   `);
+};
+
+// 절대 경로로 Module import
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@src": path.resolve(__dirname, "./src"),
+        "@root": path.resolve(__dirname, "./"),
+      },
+      modules: [
+        path.resolve(__dirname, "node_modules"),
+        path.resolve(__dirname, "./"),
+      ],
+    },
+  });
 };

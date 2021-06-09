@@ -1,28 +1,27 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import Container from "@src/components/Layout";
 
-import Bio from "../../components/bio";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
+interface BlogPostTemplateProps {
+  data: any;
+  location: any;
+}
 
-const BlogPostTemplate = ({ data, location }) => {
+function BlogPostTemplate({ data, location }: BlogPostTemplateProps) {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+    <Container
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+    >
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
         <section
@@ -30,9 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <footer></footer>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -60,9 +57,9 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </Container>
   );
-};
+}
 
 export default BlogPostTemplate;
 

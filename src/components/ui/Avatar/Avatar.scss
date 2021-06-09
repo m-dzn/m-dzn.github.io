@@ -1,0 +1,8 @@
+@import "@src/styles//lib.scss";
+
+.avatar {
+  width: $sidebar-avatar-width;
+  height: $sidebar-avatar-width;
+  border-radius: $sidebar-avatar-border-radius;
+  object-fit: cover;
+}
