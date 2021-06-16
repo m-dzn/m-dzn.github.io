@@ -1,0 +1,132 @@
+/* ----------------------------------------
+                   Common
+----------------------------------------*/
+$unit: 0.4rem;
+
+/* ----------------------------------------
+                   Colors
+----------------------------------------*/
+
+// Primary
+$color-primary: #cdc;
+$color-primary-dark: rgba(61, 58, 139, 1);
+$color-primary-light: rgba(166, 160, 204, 1);
+
+// Secondary
+$color-secondary: #f94f38;
+$color-secondary-dark: rgba(0, 168, 152, 1);
+$color-secondary-light: rgba(170, 224, 219, 1);
+
+// Gray Scale
+$color-gray-100: #f5f5f5;
+$color-gray-200: #eeeeee;
+$color-gray-300: #d5d5d5;
+$color-gray-400: #bdbdbd;
+$color-gray-500: #999999;
+$color-gray-600: #767676;
+$color-gray-700: #616161;
+$color-gray-800: #4e4e4e;
+$color-gray-900: #333333;
+
+// Primitive
+$color-primitive-white: #ffffff;
+$color-primitive-black: #000000;
+$color-primitive-red: #f9320c;
+$color-primitive-green: #3ac569;
+$color-primitive-yellow: #f8ca00;
+$color-primitive-blue: #4f86c6;
+
+// Overlay
+$color-overlay-tint: rgba(255, 255, 255, 0.1);
+$color-overlay-shade: rgba(0, 0, 0, 0.3);
+
+/* Colors: Alias Tokens */
+// Background
+$color-background: $color-primitive-white;
+$color-background-primary: $color-primary;
+$color-background-secondary: $color-secondary;
+
+// Surface
+$color-surface: $color-primitive-white;
+
+// System
+$color-success: $color-primitive-green;
+$color-error: $color-primitive-red;
+$color-warning: $color-primitive-yellow;
+$color-info: $color-primitive-blue;
+
+// Line
+$color-line-black: $color-primitive-black;
+$color-line-dark-gray: $color-gray-800;
+$color-line-gray: $color-gray-600;
+$color-line-light-gray: $color-gray-400;
+
+// Font
+$color-font-default: $color-primitive-black;
+$color-font-gray: $color-gray-600;
+$color-font-white: $color-primitive-white;
+
+/* ----------------------------------------
+                   Fonts
+----------------------------------------*/
+// heading-font-size
+$font-size-48: 4.8rem;
+$font-size-40: 4rem;
+$font-size-32: 3.2rem;
+$font-size-28: 2.8rem;
+$font-size-24: 2.4rem;
+$font-size-20: 2rem;
+$font-size-18: 1.8rem;
+$font-size-16: 1.6rem;
+$font-size-14: 1.4rem;
+$font-size-13: 1.3rem;
+
+// font-weight
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// letter
+$letter-spacing: 0.02em;
+
+// line-height
+$line-height-none: 1;
+$line-height-large-heading: 1.6;
+$line-height-normal-heading: 1.7;
+$line-height-small-heading: 1.8;
+$line-height-body: 1.9;
+
+/* ----------------------------------------
+                  Shadow
+----------------------------------------*/
+$shadow-level-1: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+$shadow-level-2: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+
+/* ----------------------------------------
+                  Spacing
+----------------------------------------*/
+$spacing-64: 6.4rem;
+$spacing-56: 5.6rem;
+$spacing-48: 4.8rem;
+$spacing-40: 4rem;
+$spacing-32: 3.2rem;
+$spacing-24: 2.4rem;
+$spacing-16: 1.6rem;
+$spacing-8: 0.8rem;
+
+/* ----------------------------------------
+                  Grid
+----------------------------------------*/
+$grid-column-number: 6;
+$grid-margin-vertical: 4rem;
+$grid-margin-horizontal: 5.6rem;
+$grid-gutter: 2.4rem;
+$grid-row-gap: 4rem;
+$grid-column: 7rem;
+$grid-row-height: 45vh;
+
+/* ----------------------------------------
+                Mark Down
+----------------------------------------*/
+$blockquote-label-width: $unit * 2;

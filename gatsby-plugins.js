@@ -4,7 +4,7 @@ const plugins = [
   {
     resolve: `gatsby-source-filesystem`,
     options: {
-      path: `${__dirname}/content/blog`,
+      path: `${__dirname}/contents/blog`,
       name: `blog`,
     },
   },
@@ -12,7 +12,7 @@ const plugins = [
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `images`,
-      path: `${__dirname}/src/images`,
+      path: `${__dirname}/src/assets/images`,
     },
   },
   {
@@ -31,7 +31,12 @@ const plugins = [
             wrapperStyle: `margin-bottom: 1.0725rem`,
           },
         },
-        `gatsby-remark-prismjs`,
+        {
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            showLineNumbers: true,
+          },
+        },
         `gatsby-remark-copy-linked-files`,
         `gatsby-remark-smartypants`,
       ],
@@ -106,7 +111,7 @@ const plugins = [
       background_color: `#ffffff`,
       theme_color: `#663399`,
       display: `minimal-ui`,
-      icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      icon: `src/asstes/images/gatsby-icon.png`, // This path is relative to the root of the site.
     },
   },
   `gatsby-plugin-react-helmet`,

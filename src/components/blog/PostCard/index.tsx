@@ -7,15 +7,11 @@ function PostCard({ post }) {
     <div className="post-card">
       <Link to={post.fields.slug}>
         <article itemScope itemType="http://schema.org/Article">
-          <header>
-            <div className="post-card__thumbnail" />
-            <small className="post-card__date caption">
-              {post.frontmatter.date}
-            </small>
-            <h4 className="post-card__title">{post.frontmatter.title}</h4>
-          </header>
+          <div className="post-card__thumbnail" />
           <section className="post-card__content">
-            <p>{post.frontmatter.description || post.excerpt}</p>
+            <small className="post-card__category">Category</small>
+            <h5 className="post-card__title">{post.frontmatter.title}</h5>
+            <small className="post-card__date">Mar 17, 2021</small>
           </section>
         </article>
       </Link>

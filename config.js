@@ -5,11 +5,11 @@ const config = {
   siteMetadata: {
     title: `Mechanism Design`,
     author: {
-      name: `Kyle Mathews`,
+      name: `Apple isle`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://jamongjelly.github.io/`,
     social: {
       twitter: `kylemathews`,
     },

@@ -1,29 +1,54 @@
 @import "@src/styles/lib.scss";
 
+$post-card--border-radius: $unit * 4;
+
+$post-card__category-height: 2.4rem;
+$post-card__date-height: 2.4rem;
+
 .post-card {
+  @include flex(column, flex-end);
+  border: 0.1rem solid $color-line-light-gray;
+  border-radius: $post-card--border-radius;
+  overflow: hidden;
 }
 
 .post-card__thumbnail {
-  background-image: url("https://images.unsplash.com/photo-1623038868323-7d39ec58eefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  margin-bottom: $spacing-md;
   padding-bottom: 56.25%;
-  border-radius: $post-card-border-radius;
 
-  box-shadow: $shadow-level2;
-}
-
-.post-card__title {
-  margin: 0;
-  margin-top: $spacing-xs;
-  &:hover {
-    color: $color-brand-primary;
-  }
+  background: url("https://images.unsplash.com/photo-1623038868323-7d39ec58eefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .post-card__content {
-  margin-top: $spacing-xs;
+  @include flex(column);
+  height: 16rem;
+  padding: $spacing-24;
+
+  flex: none;
+  & > * {
+    width: 100%;
+  }
+}
+
+.post-card__category {
+  height: $post-card__category-height;
+  color: $color-secondary;
+
+  font-weight: $font-weight-bold;
+}
+
+.post-card__title {
+  flex: 1;
+  overflow: hidden;
+
+  margin-top: 0.8rem;
+}
+
+.post-card__date {
+  color: $color-font-gray;
+  height: $post-card__date-height;
+
+  margin-top: 0.8rem;
 }

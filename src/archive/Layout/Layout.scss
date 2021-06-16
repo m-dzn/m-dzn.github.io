@@ -1,0 +1,38 @@
+@import "@src/styles/lib.scss";
+
+#container {
+  background-color: $color-background;
+  color: $color-font-default;
+
+  width: 100%;
+  min-height: $site-min-height;
+
+  font-weight: $font-weight-regular;
+  line-height: 1.6;
+  letter-spacing: $letter-spacing;
+}
+
+.frame {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding-top: $navbar-height;
+
+  position: relative;
+}
+
+.site-header {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  height: $site-header-height;
+  margin: 0 auto;
+  padding: 0 $grid-margin;
+}
+.site-header__title {
+  & > h1 {
+    margin: 0;
+  }
+}
+
+.site-main {
+  padding: $spacing-lg $grid-margin;
+}

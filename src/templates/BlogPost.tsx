@@ -1,6 +1,8 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
-import Container from "@src/components/Layout";
+import { graphql } from "gatsby";
+import PostBottomNav from "@src/components/blog/PostBottomNav";
+import Layout from "@src/components/Layout";
+import PostDetail from "@src/components/blog/PostDetail";
 
 interface BlogPostTemplateProps {
   data: any;
@@ -8,56 +10,22 @@ interface BlogPostTemplateProps {
 }
 
 function BlogPostTemplate({ data, location }: BlogPostTemplateProps) {
+  const siteMetadata = data.site.siteMetadata;
   const post = data.markdownRemark;
   const { previous, next } = data;
 
   return (
-    <Container
-      title={post.frontmatter.title}
-      description={post.frontmatter.description || post.excerpt}
+    <Layout
+    // title={post.frontmatter.title}
+    // description={post.frontmatter.description || post.excerpt}
     >
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer></footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Container>
+      <PostDetail
+        post={post}
+        author={siteMetadata.author}
+        prev={previous}
+        next={next}
+      />
+    </Layout>
   );
 }
 
@@ -72,6 +40,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {

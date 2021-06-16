@@ -1,0 +1,30 @@
+@import "@src/styles/lib.scss";
+
+$post-title-font-size: $font-size-h1 + 0.8rem;
+
+.post {
+  max-width: $post-max-width;
+  margin: 0 auto;
+}
+
+.post__header {
+  padding: $spacing-40;
+}
+
+h1.post__title {
+  margin-top: 0;
+  margin-bottom: $spacing-56;
+  font-size: $post-title-font-size;
+}
+
+.post__meta-info-box {
+  @include flex;
+}
+
+.post__md {
+  padding: $spacing-16 $spacing-40;
+}
+
+.post__footer {
+  padding: 0 $spacing-40;
+}

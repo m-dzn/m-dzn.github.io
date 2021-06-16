@@ -1,3 +1,10 @@
-@include font-face('Nanum Gothic', 'NanumGothicLight', 300);
-@include font-face('Nanum Gothic', 'NanumGothic', 400);
-@include font-face('Nanum Gothic', 'NanumGothicBold', 700);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap");
+
+#___gatsby {
+  font-family: Roboto, "Noto Sans KR", "맑은고딕", sans-serif;
+  letter-spacing: 0.04em;
+  word-spacing: 0.13em;
+
+  line-height: $line-height-body;
+}

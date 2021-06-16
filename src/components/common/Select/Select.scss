@@ -1,0 +1,15 @@
+@import "@src/styles/lib.scss";
+
+$select-width: 9.6rem;
+
+.select {
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid $color-line-gray;
+
+  padding: $spacing-8 $spacing-16;
+
+  & option {
+    padding: $spacing-8 0;
+  }
+}

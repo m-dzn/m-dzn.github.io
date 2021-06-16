@@ -1,26 +1,33 @@
 import { graphql } from "gatsby";
 import * as React from "react";
 import "@src/styles/main.scss";
-import Container from "@src/components/Layout";
-import PostListSection from "@src/components/Layout/PostListSection";
+import Layout from "@src/components/Layout";
 import PostCard from "@src/components/blog/PostCard";
+import CardView from "./../components/Layout/CardView/index";
+import Select from "@src/components/common/Select";
 
 // markup
-const IndexPage = ({ data }) => {
+const BlogPage = ({ data }) => {
+  const siteMetadata = data.site.siteMetadata;
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <Container title="Main" description="">
-      <PostListSection>
+    <Layout>
+      <Select>
+        <option>Newest</option>
+        <option>Most viewed</option>
+        <option>Most Liked</option>
+      </Select>
+      <CardView>
         {posts.map(post => (
           <PostCard key={post.fields.slug} post={post} />
         ))}
-      </PostListSection>
-    </Container>
+      </CardView>
+    </Layout>
   );
 };
 
-export default IndexPage;
+export default BlogPage;
 
 export const pageQuery = graphql`
   query {

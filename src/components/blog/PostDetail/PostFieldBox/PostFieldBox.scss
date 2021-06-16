@@ -1,0 +1,16 @@
+@import "@src/styles/lib.scss";
+
+.post-field-box {
+  @include flex(column);
+  font-size: $font-size-14;
+  line-height: $line-height-none;
+
+  & + & {
+    margin-left: $spacing-64;
+  }
+}
+
+.post-field-box__label,
+.post-field-box__data {
+  padding: $spacing-8 0;
+}

@@ -1,51 +1,44 @@
 @import "@src/styles/lib.scss";
 
+// Navbar
+$navbar-width: $unit * 100;
+$nav-menu-height: $navbar-height;
+$nav-menu-item-width: $unit * 25;
+
 .navbar {
-  background-color: $color-surface;
-
+  @include fixed(top, none);
+  @include flex(row, flex-end, flex-end);
+  width: 100%;
+  max-width: $site-max-width;
   height: $navbar-height;
-  padding: 0 $spacing-lg;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  border-top-right-radius: $board-border-radius;
-  border-top-left-radius: $board-border-radius;
+  padding: 0 $spacing-48;
+  margin: 0 auto;
 }
 
 .nav-menu {
+  @include flex-center;
   width: $navbar-width;
   height: $nav-menu-height;
 
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .nav-menu__item {
+  @include flex-center;
   width: $nav-menu-item-width;
   height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   & > a {
+    @include flex-center;
     color: inherit;
 
     width: 100%;
     height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     font-weight: $font-weight-bold;
 
     &:hover {
-      color: $color-brand-primary;
+      color: $color-primary;
     }
   }
 }

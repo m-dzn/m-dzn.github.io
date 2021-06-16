@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul className="nav-menu">
-        {menuItems.map((item) => (
+        {menuItems.map(item => (
           <NavMenuItem key={item.to} to={item.to}>
             {item.label}
           </NavMenuItem>
