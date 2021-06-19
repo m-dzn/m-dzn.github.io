@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import "./Select.scss";
 
 interface SelectProps {
   children?: ReactNode;

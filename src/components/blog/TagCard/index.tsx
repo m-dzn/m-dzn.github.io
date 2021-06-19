@@ -3,7 +3,7 @@ import { Tag } from "@src/lib/types/blog";
 import { mapToKebabCase } from "@src/lib/utils/stringUtils";
 import { Link } from "gatsby";
 import React from "react";
-import "./TagCard.scss";
+import placeholder from "@src/assets/images/placeholder.jpg";
 
 interface TagCardProps {
   tag: Tag;
@@ -12,15 +12,12 @@ interface TagCardProps {
 function TagCard({ tag }: TagCardProps) {
   return (
     <div className="tag-card">
-      <Link to={`/tags/${mapToKebabCase(tag.fieldValue)}`}>
+      <Link to={`/tags/${mapToKebabCase(tag.name)}`}>
         <header className="tag-card__header">
-          <img
-            src="https://images.unsplash.com/photo-1558655146-605d86ed31b3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fGlsbHVzdHJhdGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            alt="Tag Thumbnail"
-          />
+          <img src={tag.src || placeholder} alt="Tag Thumbnail" />
         </header>
         <footer className="tag-card__footer">
-          <h6 className="tag-card__name">{tag.fieldValue}</h6>
+          <h6 className="tag-card__name">#{tag.name}</h6>
           <Badge label={tag?.totalCount || 0} />
         </footer>
       </Link>

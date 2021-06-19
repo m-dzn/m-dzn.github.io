@@ -4,17 +4,14 @@ export interface Post {
   id: string;
   body: string;
   excerpt: string;
+  fields: MDFields;
   frontmatter: FrontMatter;
 }
 
 export interface Tag {
-  fieldValue: string;
-  totalCount?: number;
-}
-
-export interface Author {
   name: string;
-  summary?: string;
+  totalCount?: number;
+  src?: string;
 }
 
 export interface MDFields {
@@ -25,6 +22,19 @@ export interface FrontMatter {
   title?: string;
   date?: string;
   description?: string;
+  tags?: any;
+  thumbnail?: Thumbnail;
+}
+
+export interface Thumbnail {
+  childImageSharp: {
+    fluid: {
+      aspectRatio: number;
+      sizes: string;
+      src: string;
+      tracedSVG: string;
+    };
+  };
 }
 
 export interface PostNavMetaData {
@@ -32,8 +42,8 @@ export interface PostNavMetaData {
   frontmatter: FrontMatter;
 }
 
-export interface TableContent {
+export interface ToCItem {
   url: string;
   title: string;
-  items: TableContent[];
+  items: ToCItem[];
 }

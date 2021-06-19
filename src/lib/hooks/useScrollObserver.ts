@@ -23,7 +23,6 @@ export const useScrollObserver = (itemIds: string[]) => {
     elements.forEach(element => {
       observer.observe(element);
     });
-    console.log("hye");
 
     return () => {
       elements.forEach(element => {
@@ -32,30 +31,24 @@ export const useScrollObserver = (itemIds: string[]) => {
     };
   }, []);
 
-  if (typeof document !== "undefined") {
-    const anchors =
-      typeof document === "undefined"
-        ? null
-        : document.querySelectorAll(`.${TOC_CLASS} a`);
-    anchors.forEach(anchor => anchor.classList.remove(ACTIVE_CLASS));
+  if (typeof document === "undefined") return;
 
-    if (activeEntry) {
-      if (
-        activeEntry.boundingClientRect.top < 0 ||
-        activeEntry.isIntersecting
-      ) {
+  const anchors = document.querySelectorAll(`.${TOC_CLASS} a`);
+  anchors.forEach(anchor => anchor.classList.remove(ACTIVE_CLASS));
+
+  if (activeEntry) {
+    if (activeEntry.boundingClientRect.top < 0 || activeEntry.isIntersecting) {
+      document
+        .querySelector(`.${TOC_CLASS} a[href="#${activeEntry.target.id}"]`)
+        ?.classList.add(ACTIVE_CLASS);
+    } else {
+      const prevIndex = itemIds.indexOf(activeEntry.target.id) - 1;
+      const prevId = itemIds[prevIndex < 0 ? undefined : prevIndex];
+
+      if (prevId) {
         document
-          .querySelector(`.${TOC_CLASS} a[href="#${activeEntry.target.id}"]`)
+          .querySelector(`.${TOC_CLASS} a[href="#${prevId}"]`)
           ?.classList.add(ACTIVE_CLASS);
-      } else {
-        const prevIndex = itemIds.indexOf(activeEntry.target.id) - 1;
-        const prevId = itemIds[prevIndex < 0 ? undefined : prevIndex];
-
-        if (prevId) {
-          document
-            .querySelector(`.${TOC_CLASS} a[href="#${prevId}"]`)
-            ?.classList.add(ACTIVE_CLASS);
-        }
       }
     }
   }

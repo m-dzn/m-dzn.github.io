@@ -2,7 +2,8 @@
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
-tags: ["diary"]
+thumbnail: "./salty_egg.jpg"
+tags: [css, html, gatsby]
 ---
 
 This is my first post on my new fake blog! How exciting!
@@ -226,7 +227,3 @@ _single underscores_
 This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
-
-![Alt Text](https://placehold.it/200x50 "Image Title")
-
-    ![Alt Text](https://placehold.it/200x50 "Image Title")

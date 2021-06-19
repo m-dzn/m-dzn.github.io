@@ -1,19 +1,18 @@
 import { useScrollObserver } from "@src/lib/hooks/useScrollObserver";
-import { TableContent } from "@src/lib/types/blog";
+import { ToCItem } from "@src/lib/types/blog";
 import { removeTagsFromHeadingTitle } from "@src/lib/utils/stringUtils";
 import React from "react";
 import { useMemo } from "react";
-import "./ToC.scss";
 
 interface ToCProps {
-  tableOfContents?: TableContent[];
+  tableOfContents?: ToCItem[];
 }
 
 function ToC({ tableOfContents }: ToCProps) {
   const targetIds = useMemo(() => {
     const ids = [];
 
-    function getItemUrl(items: TableContent[]) {
+    function getItemUrl(items: ToCItem[]) {
       if (!items) return;
 
       items.forEach(item => {
@@ -32,7 +31,7 @@ function ToC({ tableOfContents }: ToCProps) {
 
   useScrollObserver(targetIds);
 
-  const createTableContent = (items: TableContent[]) => {
+  const createTableContent = (items: ToCItem[]) => {
     return items.map(item => (
       <ul key={item.url}>
         <li>

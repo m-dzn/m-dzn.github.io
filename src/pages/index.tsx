@@ -5,6 +5,7 @@ import Layout from "@src/components/Layout";
 import PostCard from "@src/components/blog/PostCard";
 import Select from "@src/components/common/Select";
 import CardView from "@src/components/Layout/CardView";
+import { Post } from "@src/lib/types/blog";
 
 // markup
 const BlogPage = ({ data }) => {
@@ -19,7 +20,7 @@ const BlogPage = ({ data }) => {
         <option>Most Liked</option>
       </Select>
       <CardView>
-        {posts.map(post => (
+        {posts.map((post: Post) => (
           <PostCard key={post.fields.slug} post={post} />
         ))}
       </CardView>
@@ -50,6 +51,13 @@ export const pageQuery = graphql`
           title
           description
           tags
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
         }
       }
     }

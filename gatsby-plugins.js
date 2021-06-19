@@ -1,11 +1,10 @@
 const plugins = [
   `gatsby-plugin-sass`,
-  `gatsby-plugin-image`,
   {
     resolve: `gatsby-source-filesystem`,
     options: {
-      path: `${__dirname}/contents/blog`,
       name: `blog`,
+      path: `${__dirname}/contents/blog`,
     },
   },
   {
@@ -36,16 +35,6 @@ const plugins = [
           },
         },
         {
-          resolve: `gatsby-remark-table-of-contents`,
-          options: {
-            tight: false,
-            ordered: false,
-            fromHeading: 1,
-            toHeading: 3,
-            className: "table-of-contents",
-          },
-        },
-        {
           resolve: `gatsby-remark-autolink-headers`,
           options: {
             className: `anchor-header`,
@@ -56,14 +45,12 @@ const plugins = [
           },
         },
         {
-          resolve: `gatsby-remark-prismjs`,
-          options: {
-            showLineNumbers: true,
-          },
+          resolve: `gatsby-remark-highlight-code`,
         },
       ],
     },
   },
+  `gatsby-plugin-image`,
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   // {
@@ -127,7 +114,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Gatsby Starter Blog`,
+      name: `Jamong Jelly Blog`,
       short_name: `GatsbyJS`,
       start_url: `/`,
       background_color: `#ffffff`,

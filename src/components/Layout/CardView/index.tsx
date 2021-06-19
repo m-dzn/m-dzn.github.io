@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import "./CardView.scss";
 
 interface indexProps {
   children?: ReactNode;

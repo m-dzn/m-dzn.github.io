@@ -1,6 +1,6 @@
 import React from "react";
-import "./PostDetail.scss";
-import { Author, Post, PostNavMetaData } from "@src/lib/types/blog";
+import { Author } from "@src/lib/types/site";
+import { Post, PostNavMetaData } from "@src/lib/types/blog";
 import PostBottomNav from "@src/components/blog/PostBottomNav";
 import PostFieldBox from "./PostFieldBox";
 import { MDXRenderer } from "gatsby-plugin-mdx";

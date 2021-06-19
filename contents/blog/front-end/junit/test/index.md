@@ -1,35 +1,12 @@
 ---
 title: JUnit Assertion
 date: "2021-06-07T22:40:32.169Z"
-tags: ["JUnit"]
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+tags: [junit]
+thumbnail: "./junit_assert_error_message.png"
 ---
 
 > _어떤 조건이 예상 결과와 부합하는지 검증하는 구문입니다._
-
-# '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
-
-## '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
-
-### '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
-
-### 과학기술정보통신부와 한국지능정보사회진흥원은 인공지능 학습용 데이터 170종
-
-# H1 편집의 기본,<br/>그리드를 이해하라
-
-## H2 타이포그래피로<br/>정보를 시각화하라
-
-### H3 다양한 편집<br/>& 그리드 디자인을 분석하라
-
-#### H4 인쇄에 안정적인<br/>폰트를 활용한 디자인
-
-##### H5 다양한 변화가 가능한<br/>아이덴티티를 사용한 디자인
-
-###### H6 지난 5월, 보육시설 아동 및 청소년들을 대상으로 진행한 제1회 소이프 미술공모전에 출품된 작품 중 하나가 저희들의 눈길을 끌었습니다.
-
-<p class="body-lg">Body Large 일본 영화 애호가들과 영화 제작자, 그리고 예술가들을 독일 프랑크프루트로 불러 모으고 있습니다.</p>
-
-Body Normal 새, 나비, 벌과 고양이 그리고 화분과 예쁜 구름까지 다양한 색상을 사용하여 그린 그림이 너무 귀엽고 예뻤습니다. 그 중에서도 다채로운 색상으로 꾸며진 구름을 보며 어떻게 이렇게 표현을 했을까! 감탄했습니다. 이러한 아이들의 예쁜 눈과 마음이 더욱 예쁘게 자랄 수 있기를 바라며 이 아동의 그림 중 구름과 꽃을 모티브로 티셔츠를 디자인 했습니다.
 
 #### Style
 
@@ -143,15 +120,10 @@ public class TempTest {
 
 ### 1. 오류 메시지
 
-<!--
 **JUnit Assert**
 
-![assertEquals(D:\Projects\GitHub\GitBook-TIL.gitbook\assets\spring\junit\junit_assert_error_message.png);](../../../.gitbook/assets/spring/junit/junit_assert_error_message.png)
+![assertEquals(D:\Projects\GitHub\GitBook-TIL.gitbook\assets\spring\junit\junit_assert_error_message.png);](./junit_assert_error_message.png)
 
 **Hamcrest**
 
-![assertThat(../../../.gitbook/assets/spring/junit/hamcrest_error_message.png);](../../../.gitbook/assets/spring/junit/hamcrest_error_message.png) -->
-
-- 변경 사항을 체계적으로 관리합니다.
-- 파일 이름을 더럽히지 않고 버전을 관리할 수 있게 도와주는 도구입니다.
-- 소스 코드를 백업해주므로 장애 회복 시 유용하게 쓰입니다.
+![assertThat(../../../.gitbook/assets/spring/junit/hamcrest_error_message.png);](./hamcrest_error_message.png)

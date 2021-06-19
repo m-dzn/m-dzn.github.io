@@ -16,3 +16,11 @@ $post-field-box-gutter: 12rem;
 .post-field-box__data {
   padding: $spacing-8 0;
 }
+
+@include mobile {
+  .post-field-box {
+    & + & {
+      margin-left: $spacing-32;
+    }
+  }
+}

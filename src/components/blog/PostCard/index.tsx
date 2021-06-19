@@ -1,13 +1,26 @@
+import { Post } from "@src/lib/types/blog";
 import { Link } from "gatsby";
 import React from "react";
-import "./PostCard.scss";
+import placeholder from "@src/assets/images/placeholder.jpg";
 
-function PostCard({ post }) {
+interface PostCardProps {
+  post: Post;
+}
+
+function PostCard({ post }: PostCardProps) {
   return (
     <div className="post-card">
       <Link to={post.fields.slug}>
         <article itemScope itemType="http://schema.org/Article">
-          <div className="post-card__thumbnail" />
+          <div className="post-card__thumbnail">
+            <img
+              src={
+                post.frontmatter.thumbnail?.childImageSharp.fluid.src ||
+                placeholder
+              }
+              alt={`${post.frontmatter.title} thumbnail`}
+            />
+          </div>
           <section className="post-card__content">
             <div className="post-card__tags">
               <small>

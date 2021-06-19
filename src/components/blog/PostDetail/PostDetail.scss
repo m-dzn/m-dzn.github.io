@@ -2,6 +2,7 @@
 
 $post-title-font-size: $font-size-h1 + 0.8rem;
 $post-padding-horizontal: $spacing-40;
+$post-bottom-margin: 20rem;
 
 .post {
   max-width: $post-max-width;
@@ -23,10 +24,28 @@ h1.post__title {
 }
 
 .post__md {
+  position: relative;
   padding: $spacing-16 $post-padding-horizontal;
 }
 
 .post__footer {
   padding: 0 $post-padding-horizontal;
-  margin-bottom: 20rem;
+  margin-bottom: $post-bottom-margin;
+}
+
+@include mobile {
+  $post-padding-horizontal: 0;
+  $post-bottom-margin: 4rem;
+
+  .post__header {
+    padding: $spacing-24 $spacing-16;
+  }
+  .post__md {
+    padding: $spacing-16 $post-padding-horizontal;
+  }
+
+  .post__footer {
+    padding: 0 $post-padding-horizontal;
+    margin-bottom: $post-bottom-margin;
+  }
 }

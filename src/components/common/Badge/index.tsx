@@ -1,5 +1,4 @@
 import React from "react";
-import "./Badge.scss";
 
 interface BadgeProps {
   label: string | number;

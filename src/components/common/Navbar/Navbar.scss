@@ -22,3 +22,9 @@
     padding: $spacing-16;
   }
 }
+
+@include mobile {
+  .site-nav {
+    padding: 0 $grid-margin-horizontal-mobile;
+  }
+}

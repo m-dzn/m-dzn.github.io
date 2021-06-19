@@ -14,6 +14,10 @@ const config = {
       twitter: `kylemathews`,
     },
   },
+  pages: {
+    home: "/",
+    tag: "tags",
+  },
 };
 
 module.exports = { config };

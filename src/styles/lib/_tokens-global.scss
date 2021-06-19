@@ -124,7 +124,8 @@ $spacing-4: 0.4rem;
 ----------------------------------------*/
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-$breakpoint-wide-desktop: 1320px;
+$breakpoint-desktop-1320: 1320px;
+$breakpoint-desktop-1440: 1440px;
 
 /* ----------------------------------------
                   Grid
@@ -133,7 +134,7 @@ $grid-column-number: 6;
 $grid-margin-vertical: 4rem;
 $grid-margin-horizontal: 5.6rem;
 $grid-margin-vertical-mobile: 2.4rem;
-$grid-margin-horizontal-mobile: 3.2rem;
+$grid-margin-horizontal-mobile: 1.2rem;
 $grid-gutter: 2.4rem;
 // $grid-row-gap: 4rem;
 $grid-column: 7rem;

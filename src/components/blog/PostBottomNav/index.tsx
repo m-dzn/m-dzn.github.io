@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { PostNavMetaData } from "@src/lib/types/blog";
-import "./PostBottomNav.scss";
 
 interface indexProps {
   prev: PostNavMetaData;

@@ -1,17 +1,27 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { config } = require("./config");
 
 // Post 빌드가 성공적으로 끝나면 성공 메시지를 로그로 내보냅니다.
 exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`);
 };
 
+const resolveUrl = (...paths) =>
+  paths.reduce((resolvedUrl, path) => {
+    const urlPath = path.toString().trim();
+    if (urlPath) {
+      resolvedUrl += `/${urlPath.replace(/^\/|\/$/g, "")}`;
+    }
+    return resolvedUrl[0] === "/" ? resolvedUrl : `/${resolvedUrl}`;
+  }, "");
+
 // Blog의 Post Page들을 동적으로 생성합니다.
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // Define a template for blog post
-  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`);
 
   // MarkDown으로 쓴 모든 Post를 시간 순으로 정렬해 불러옵니다.
   // (YAML Front-matter 기준)
@@ -28,6 +38,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               fields {
                 slug
               }
+              frontmatter {
+                tags
+              }
+              fileAbsolutePath
             }
             previous {
               id
@@ -69,6 +83,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
   }
+
+  /**
+   * Tag Pages
+   */
+  const allTags = [];
+  const defaultPosts = posts.filter(({ node: { fileAbsolutePath } }) =>
+    fileAbsolutePath.match(/index\.mdx?$/)
+  );
+  defaultPosts.forEach(({ node }) => {
+    node.frontmatter.tags.forEach(tag => {
+      if (allTags.indexOf(tag) === -1) allTags.push(tag);
+    });
+  });
+
+  allTags.forEach(tag => {
+    createPage({
+      path: resolveUrl(config.pages.tag, tag),
+      component: path.resolve("src/templates/Tags/index.tsx"),
+      context: {
+        tag,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

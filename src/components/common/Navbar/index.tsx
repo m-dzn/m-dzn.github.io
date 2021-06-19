@@ -1,5 +1,4 @@
 import React from "react";
-import "./Navbar.scss";
 import SearchBox from "@src/components/common/SearchBox";
 import { Link } from "gatsby";
 

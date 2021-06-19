@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import PostBottomNav from "@src/components/blog/PostBottomNav";
 import Layout from "@src/components/Layout";
 import PostDetail from "@src/components/blog/PostDetail";
 import ToC from "@src/components/blog/ToC";
@@ -53,6 +52,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {

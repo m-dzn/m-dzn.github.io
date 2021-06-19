@@ -4,7 +4,6 @@
   background-color: $color-background;
   color: $color-font-black;
 
-  width: 100%;
   height: 100%;
   min-height: $site-min-height;
 
@@ -13,6 +12,7 @@
 
 .dashboard {
   @include flex(column);
+  width: 100%;
   flex: 1;
 }
 
@@ -44,5 +44,8 @@
 @include mobile {
   .site-main {
     padding: $grid-margin-vertical-mobile $grid-margin-horizontal-mobile;
+  }
+  .site-footer {
+    padding: 0 $grid-margin-horizontal-mobile;
   }
 }

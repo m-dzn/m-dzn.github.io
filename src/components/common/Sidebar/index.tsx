@@ -1,5 +1,4 @@
 import React from "react";
-import "./Sidebar.scss";
 import logo from "@src/assets/icons/logo.png";
 import { Link } from "gatsby";
 import sidebarRoutes from "@src/routes/sidebarRoutes";

@@ -1,5 +1,4 @@
 import React from "react";
-import "./SearchBox.scss";
 import SearchIcon from "@material-ui/icons/Search";
 
 interface SearchBoxProps {}

@@ -1,4 +1,4 @@
-import { TableContent } from "@src/lib/types/blog";
+import { ToCItem } from "@src/lib/types/blog";
 import { ReactNode } from "react";
 
 export const mapToKebabCase = (words: string) =>

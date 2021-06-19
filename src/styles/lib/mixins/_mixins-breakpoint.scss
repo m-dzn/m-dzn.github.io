@@ -13,7 +13,13 @@
 }
 
 @mixin desktop {
-  @media (max-width: #{$breakpoint-wide-desktop}) {
+  @media (max-width: #{$breakpoint-desktop-1320}) {
+    @content;
+  }
+}
+
+@mixin desktop-1320 {
+  @media (max-width: #{$breakpoint-desktop-1440}) {
     @content;
   }
 }

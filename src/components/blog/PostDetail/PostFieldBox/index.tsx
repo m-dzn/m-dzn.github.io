@@ -1,5 +1,4 @@
 import React from "react";
-import "./PostFieldBox.scss";
 
 interface PostFieldBoxProps {
   label: string;
