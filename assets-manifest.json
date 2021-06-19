@@ -63,6 +63,7 @@
   "polyfills-dom.js": "polyfills-dom.render-page.js",
   "polyfills-dom.render-page.js.map": "polyfills-dom.render-page.js.map",
   "render-page.js.map": "render-page.js.map",
+  "static/placeholder.jpg": "static/placeholder-b3edaee4440154c16f17e70d50e43e64.jpg",
   "vendors-node_modules_deckdeckgo_highlight-code_dist_esm_deckgo-highlight-code_entry_js.render-page.js": "vendors-node_modules_deckdeckgo_highlight-code_dist_esm_deckgo-highlight-code_entry_js.render-page.js",
   "vendors-node_modules_deckdeckgo_highlight-code_dist_esm_deckgo-highlight-code_entry_js.render-page.js.map": "vendors-node_modules_deckdeckgo_highlight-code_dist_esm_deckgo-highlight-code_entry_js.render-page.js.map"
 }
