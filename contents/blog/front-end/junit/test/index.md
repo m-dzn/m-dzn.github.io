@@ -1,10 +1,19 @@
 ---
 title: JUnit Assertion
 date: "2021-06-07T22:40:32.169Z"
+tags: ["JUnit"]
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
 > _어떤 조건이 예상 결과와 부합하는지 검증하는 구문입니다._
+
+# '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
+
+## '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
+
+### '데이터댐' 열렸다…AI 학습용 데이터 4억8천만건 개방
+
+### 과학기술정보통신부와 한국지능정보사회진흥원은 인공지능 학습용 데이터 170종
 
 # H1 편집의 기본,<br/>그리드를 이해하라
 
@@ -134,13 +143,14 @@ public class TempTest {
 
 ### 1. 오류 메시지
 
+<!--
 **JUnit Assert**
 
 ![assertEquals(D:\Projects\GitHub\GitBook-TIL.gitbook\assets\spring\junit\junit_assert_error_message.png);](../../../.gitbook/assets/spring/junit/junit_assert_error_message.png)
 
 **Hamcrest**
 
-![assertThat(../../../.gitbook/assets/spring/junit/hamcrest_error_message.png);](../../../.gitbook/assets/spring/junit/hamcrest_error_message.png)
+![assertThat(../../../.gitbook/assets/spring/junit/hamcrest_error_message.png);](../../../.gitbook/assets/spring/junit/hamcrest_error_message.png) -->
 
 - 변경 사항을 체계적으로 관리합니다.
 - 파일 이름을 더럽히지 않고 버전을 관리할 수 있게 도와주는 도구입니다.

@@ -2,12 +2,15 @@ import React, { ReactNode } from "react";
 import "./Layout.scss";
 import Sidebar from "../common/Sidebar";
 import Navbar from "@src/components/common/Navbar";
+import { SiteMetadata } from "@src/lib/types";
 
 interface indexProps {
+  pageTitle?: string;
+  siteMetadata: SiteMetadata;
   children: ReactNode;
 }
 
-function Layout({ children }: indexProps) {
+function Layout({ pageTitle, siteMetadata, children }: indexProps) {
   return (
     <div id="frame">
       <Sidebar />
@@ -15,9 +18,12 @@ function Layout({ children }: indexProps) {
         <header className="site-header">
           <Navbar />
         </header>
-        <main className="site-main">{children}</main>
+        <main className="site-main">
+          {pageTitle && <h1 className="main__title">{pageTitle}</h1>}
+          <section className="main__contents">{children}</section>
+        </main>
         <footer className="site-footer">
-          Copyright &copy; 2021 Apple isle All rights reserved.
+          Copyright &copy; 2021 {siteMetadata.author.name} All rights reserved.
         </footer>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 #frame {
   background-color: $color-background;
-  color: $color-font-default;
+  color: $color-font-black;
 
   width: 100%;
   height: 100%;
@@ -20,9 +20,18 @@
   padding: $grid-margin-vertical $grid-margin-horizontal;
 
   flex: 1;
+}
 
-  & > *:not(:first-child) {
-    margin-top: $board-contents-gap-vertical;
+.main__title {
+  margin-bottom: $spacing-16;
+  font-size: $font-size-h5;
+  font-weight: $font-weight-bold;
+  text-transform: capitalize;
+}
+
+.main__contents {
+  & > :not(:first-child) {
+    margin-top: $spacing-40;
   }
 }
 
@@ -30,4 +39,10 @@
   @include flex(row, flex-start, center);
   height: $site-footer-height;
   padding: 0 $grid-margin-horizontal;
+}
+
+@include mobile {
+  .site-main {
+    padding: $grid-margin-vertical-mobile $grid-margin-horizontal-mobile;
+  }
 }

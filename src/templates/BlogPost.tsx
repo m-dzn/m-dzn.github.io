@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import PostBottomNav from "@src/components/blog/PostBottomNav";
 import Layout from "@src/components/Layout";
 import PostDetail from "@src/components/blog/PostDetail";
+import ToC from "@src/components/blog/ToC";
 
 interface BlogPostTemplateProps {
   data: any;
@@ -11,14 +12,12 @@ interface BlogPostTemplateProps {
 
 function BlogPostTemplate({ data, location }: BlogPostTemplateProps) {
   const siteMetadata = data.site.siteMetadata;
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const { previous, next } = data;
 
   return (
-    <Layout
-    // title={post.frontmatter.title}
-    // description={post.frontmatter.description || post.excerpt}
-    >
+    <Layout siteMetadata={siteMetadata}>
+      <ToC tableOfContents={post.tableOfContents.items} />
       <PostDetail
         post={post}
         author={siteMetadata.author}
@@ -45,17 +44,18 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      tableOfContents(maxDepth: 3)
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }

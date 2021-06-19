@@ -2,12 +2,11 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import "@src/styles/main.scss";
 import Layout from "@src/components/Layout";
-import PostCard from "@src/components/blog/PostCard";
 import Select from "@src/components/common/Select";
 import CardView from "@src/components/Layout/CardView";
 
 // markup
-const BlogPage = ({ data }) => {
+const TagPosts = ({ data }) => {
   const siteMetadata = data.site.siteMetadata;
   const posts = data.allMdx.nodes;
 
@@ -18,19 +17,15 @@ const BlogPage = ({ data }) => {
         <option>Most viewed</option>
         <option>Most Liked</option>
       </Select>
-      <CardView>
-        {posts.map(post => (
-          <PostCard key={post.fields.slug} post={post} />
-        ))}
-      </CardView>
+      <CardView></CardView>
     </Layout>
   );
 };
 
-export default BlogPage;
+export default TagPosts;
 
 export const pageQuery = graphql`
-  query {
+  query PostsByCategory {
     site {
       siteMetadata {
         title

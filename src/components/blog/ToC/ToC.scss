@@ -1,0 +1,64 @@
+@import "@src/styles/lib.scss";
+
+$toc-top-position: 15rem;
+$toc-right-position: calc((100% - #{$post-max-width}) / 2 - 28rem);
+
+.toc {
+  position: fixed;
+  top: $toc-top-position;
+  right: $toc-right-position;
+
+  width: 25rem;
+  padding: $spacing-16;
+
+  font-size: $font-size-14;
+  line-height: $line-height-narrow;
+}
+
+.toc {
+  padding: $spacing-16 $spacing-8;
+  // border-left: 0.1rem solid $color-line-gray;
+
+  color: $color-font-gray;
+
+  & > ul {
+    & li {
+      margin-top: $spacing-4;
+    }
+
+    & ul {
+      margin-left: $spacing-16;
+    }
+  }
+}
+
+.content-link {
+  color: inherit;
+
+  & > div {
+    transition: $transition-200;
+  }
+}
+
+.content-link:hover > div,
+.content-link.active > div {
+  color: $color-font-black;
+  transform: scale(1.1);
+}
+
+@include desktop {
+  .toc {
+    display: none;
+  }
+}
+
+@keyframes zoom {
+  100% {
+    color: red;
+    transform: scale(1.1);
+  }
+  0% {
+    color: blue;
+    transform: scale(1);
+  }
+}

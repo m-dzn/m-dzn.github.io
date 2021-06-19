@@ -30,3 +30,10 @@ $search-btn-size: $navbar-height;
   width: $search-btn-size;
   height: $search-btn-size;
 }
+
+// TODO: 모바일용 Right Nav Drawer 구현
+@include mobile {
+  .search-box {
+    display: none;
+  }
+}

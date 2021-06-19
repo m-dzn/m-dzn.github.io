@@ -8,7 +8,7 @@ $unit: 0.4rem;
 ----------------------------------------*/
 
 // Primary
-$color-primary: #cdc;
+$color-primary: #57c;
 $color-primary-dark: rgba(61, 58, 139, 1);
 $color-primary-light: rgba(166, 160, 204, 1);
 
@@ -27,6 +27,7 @@ $color-gray-600: #767676;
 $color-gray-700: #616161;
 $color-gray-800: #4e4e4e;
 $color-gray-900: #333333;
+$color-gray-950: #222222;
 
 // Primitive
 $color-primitive-white: #ffffff;
@@ -62,7 +63,7 @@ $color-line-gray: $color-gray-600;
 $color-line-light-gray: $color-gray-400;
 
 // Font
-$color-font-default: $color-primitive-black;
+$color-font-black: $color-primitive-black;
 $color-font-gray: $color-gray-600;
 $color-font-white: $color-primitive-white;
 
@@ -92,6 +93,7 @@ $letter-spacing: 0.02em;
 
 // line-height
 $line-height-none: 1;
+$line-height-narrow: 1.4;
 $line-height-large-heading: 1.6;
 $line-height-normal-heading: 1.7;
 $line-height-small-heading: 1.8;
@@ -113,7 +115,16 @@ $spacing-40: 4rem;
 $spacing-32: 3.2rem;
 $spacing-24: 2.4rem;
 $spacing-16: 1.6rem;
+$spacing-12: 1.2rem;
 $spacing-8: 0.8rem;
+$spacing-4: 0.4rem;
+
+/* ----------------------------------------
+                Breakpoint
+----------------------------------------*/
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide-desktop: 1320px;
 
 /* ----------------------------------------
                   Grid
@@ -121,10 +132,18 @@ $spacing-8: 0.8rem;
 $grid-column-number: 6;
 $grid-margin-vertical: 4rem;
 $grid-margin-horizontal: 5.6rem;
+$grid-margin-vertical-mobile: 2.4rem;
+$grid-margin-horizontal-mobile: 3.2rem;
 $grid-gutter: 2.4rem;
-$grid-row-gap: 4rem;
+// $grid-row-gap: 4rem;
 $grid-column: 7rem;
 $grid-row-height: 45vh;
+
+/* ----------------------------------------
+                Animation
+----------------------------------------*/
+// transition
+$transition-200: all 200ms;
 
 /* ----------------------------------------
                 Mark Down

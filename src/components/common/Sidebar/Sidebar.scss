@@ -1,6 +1,6 @@
 @import "@src/styles/lib.scss";
 
-$color-sidebar-background: $color-gray-900;
+$color-sidebar-background: $color-gray-950;
 $color-sidebar-menu-hover: $color-overlay-shade;
 $color-sidebar-highlight: $color-primary;
 
@@ -49,5 +49,12 @@ $sidebar-icon-color: $color-primitive-white;
     &:hover {
       color: $color-secondary;
     }
+  }
+}
+
+// TODO: Sidebar 모바일용 Right Nav Drawer 구현
+@include mobile {
+  .sidebar {
+    display: none;
   }
 }

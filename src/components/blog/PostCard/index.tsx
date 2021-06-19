@@ -9,7 +9,11 @@ function PostCard({ post }) {
         <article itemScope itemType="http://schema.org/Article">
           <div className="post-card__thumbnail" />
           <section className="post-card__content">
-            <small className="post-card__category">Category</small>
+            <div className="post-card__tags">
+              <small>
+                {(post.frontmatter && `#${post.frontmatter.tags}`) || ""}
+              </small>
+            </div>
             <h5 className="post-card__title">{post.frontmatter.title}</h5>
             <small className="post-card__date">Mar 17, 2021</small>
           </section>

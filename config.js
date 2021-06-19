@@ -5,7 +5,7 @@ const config = {
   siteMetadata: {
     title: `Mechanism Design`,
     author: {
-      name: `Apple isle`,
+      name: `Jamong Jelly`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,

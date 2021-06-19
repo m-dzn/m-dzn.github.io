@@ -11,7 +11,7 @@ $board-border-radius: $spacing-48;
 $board-contents-gap-vertical: 4rem;
 
 // Post
-$post-max-width: 76.8rem + 2 * $spacing-40;
+$post-max-width: 76.8rem;
 
 /* ----------------------------------------
                 Typography
@@ -46,3 +46,10 @@ $sidebar-avatar-border-radius: $unit * 12;
 $navbar-height: $sidebar-width;
 $navbar-background-color: $color-surface;
 $navbar-shadow: $shadow-level-1;
+
+// Post-Card
+$post-card--border: 0.1rem solid $color-line-light-gray;
+$post-card--border-radius: $unit * 4;
+
+// Tags
+$tags-text-transform: lowercase;

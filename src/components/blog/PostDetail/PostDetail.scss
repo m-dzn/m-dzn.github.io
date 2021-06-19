@@ -1,6 +1,7 @@
 @import "@src/styles/lib.scss";
 
 $post-title-font-size: $font-size-h1 + 0.8rem;
+$post-padding-horizontal: $spacing-40;
 
 .post {
   max-width: $post-max-width;
@@ -8,7 +9,7 @@ $post-title-font-size: $font-size-h1 + 0.8rem;
 }
 
 .post__header {
-  padding: $spacing-40;
+  padding: $post-padding-horizontal;
 }
 
 h1.post__title {
@@ -22,9 +23,10 @@ h1.post__title {
 }
 
 .post__md {
-  padding: $spacing-16 $spacing-40;
+  padding: $spacing-16 $post-padding-horizontal;
 }
 
 .post__footer {
-  padding: 0 $spacing-40;
+  padding: 0 $post-padding-horizontal;
+  margin-bottom: 20rem;
 }

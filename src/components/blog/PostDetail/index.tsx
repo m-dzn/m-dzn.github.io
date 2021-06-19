@@ -1,8 +1,11 @@
 import React from "react";
 import "./PostDetail.scss";
-import { Author, Post, PostNavMetaData } from "@src/types/blog";
+import { Author, Post, PostNavMetaData } from "@src/lib/types/blog";
 import PostBottomNav from "@src/components/blog/PostBottomNav";
 import PostFieldBox from "./PostFieldBox";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+import Heading from "@src/components/common/Heading";
 
 interface PostDetailProps {
   post: Post;
@@ -10,6 +13,15 @@ interface PostDetailProps {
   prev: PostNavMetaData;
   next: PostNavMetaData;
 }
+
+const customMDComponents = {
+  h1: props => <Heading tag="h2" {...props} />,
+  h2: props => <Heading tag="h3" {...props} />,
+  h3: props => <Heading tag="h4" {...props} />,
+  h4: props => <Heading tag="h5" {...props} />,
+  h5: props => <Heading tag="h6" {...props} />,
+  h6: props => <Heading tag="h6" {...props} />,
+};
 
 function PostDetail({ post, author, prev, next }: PostDetailProps) {
   return (
@@ -21,11 +33,11 @@ function PostDetail({ post, author, prev, next }: PostDetailProps) {
           <PostFieldBox label="Date" data={post.frontmatter.date} />
         </div>
       </header>
-      <section
-        className="post__md"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-        // itemProp="articleBody"
-      />
+      <section className="post__md">
+        <MDXProvider components={customMDComponents}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </MDXProvider>
+      </section>
 
       <footer className="post__footer">
         <hr />

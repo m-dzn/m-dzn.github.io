@@ -2,8 +2,8 @@
 
 .card-view {
   display: grid;
-  grid-row-gap: $grid-row-gap;
+  grid-row-gap: $grid-gutter;
   grid-column-gap: $grid-gutter;
-  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
   grid-auto-rows: 1fr;
 }

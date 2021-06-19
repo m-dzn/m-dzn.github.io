@@ -4,10 +4,10 @@ import Seo from "@src/components/common/Seo";
 import Layout from "@src/components/Layout";
 
 const NotFoundPage = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title;
+  const siteMetadata = data.site.siteMetadata;
 
   return (
-    <Layout>
+    <Layout siteMetadata={siteMetadata}>
       <Seo title="404: Not Found" />
       <h1>404: Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
@@ -22,6 +22,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
   }

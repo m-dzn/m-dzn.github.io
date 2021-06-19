@@ -1,46 +1,32 @@
 @use 'sass:math';
 
-.post-md {
+.post__md {
   // /* ----------------------------------------
   //                   Heading
   // ----------------------------------------*/
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: $font-weight-bold;
-  }
 
   h1 {
     @include heading-margin($spacing-40);
-    @extend .h1;
   }
 
   h2 {
     @include heading-margin($spacing-32);
-    @extend .h2;
   }
 
   h3 {
     @include heading-margin($spacing-32);
-    @extend .h3;
   }
 
   h4 {
     @include heading-margin($spacing-24);
-    @extend .h4;
   }
 
   h5 {
     @include heading-margin($spacing-24);
-    @extend .h5;
   }
 
   h6 {
     @include heading-margin($spacing-24);
-    @extend .h6;
   }
 
   /* ----------------------------------------
@@ -88,3 +74,7 @@
     margin-bottom: math.div($spacing-16, 2);
   }
 }
+
+/* ----------------------------------------
+                  Code Block
+  ----------------------------------------*/

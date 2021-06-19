@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { PostNavMetaData } from "@src/types/blog";
+import { PostNavMetaData } from "@src/lib/types/blog";
+import "./PostBottomNav.scss";
 
 interface indexProps {
   prev: PostNavMetaData;
@@ -9,16 +10,8 @@ interface indexProps {
 
 function PostBottomNav({ prev, next }: indexProps) {
   return (
-    <nav className="blog-post-nav">
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+    <nav className="post-nav">
+      <ul className="post-nav-menu">
         <li>
           {prev && (
             <Link to={prev.fields.slug} rel="prev">

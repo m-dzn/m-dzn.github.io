@@ -16,19 +16,43 @@ const plugins = [
     },
   },
   {
-    resolve: `gatsby-transformer-remark`,
+    resolve: `gatsby-plugin-mdx`,
     options: {
-      plugins: [
+      extensions: [`.mdx`, `.md`],
+      gatsbyRemarkPlugins: [
         {
           resolve: `gatsby-remark-images`,
           options: {
             maxWidth: 630,
+            linkImagesToOriginal: true,
           },
         },
+        `gatsby-remark-copy-linked-files`,
+        `gatsby-remark-smartypants`,
         {
           resolve: `gatsby-remark-responsive-iframe`,
           options: {
             wrapperStyle: `margin-bottom: 1.0725rem`,
+          },
+        },
+        {
+          resolve: `gatsby-remark-table-of-contents`,
+          options: {
+            tight: false,
+            ordered: false,
+            fromHeading: 1,
+            toHeading: 3,
+            className: "table-of-contents",
+          },
+        },
+        {
+          resolve: `gatsby-remark-autolink-headers`,
+          options: {
+            className: `anchor-header`,
+            icon: false,
+            maintainCase: false,
+            removeAccents: true,
+            elements: ["h1", "h2", "h3"],
           },
         },
         {
@@ -37,8 +61,6 @@ const plugins = [
             showLineNumbers: true,
           },
         },
-        `gatsby-remark-copy-linked-files`,
-        `gatsby-remark-smartypants`,
       ],
     },
   },
@@ -50,58 +72,58 @@ const plugins = [
   //     trackingId: `ADD YOUR TRACKING ID HERE`,
   //   },
   // },
-  {
-    resolve: `gatsby-plugin-feed`,
-    options: {
-      query: `
-        {
-          site {
-            siteMetadata {
-              title
-              description
-              siteUrl
-              site_url: siteUrl
-            }
-          }
-        }
-      `,
-      feeds: [
-        {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.nodes.map(node => {
-              return Object.assign({}, node.frontmatter, {
-                description: node.excerpt,
-                date: node.frontmatter.date,
-                url: site.siteMetadata.siteUrl + node.fields.slug,
-                guid: site.siteMetadata.siteUrl + node.fields.slug,
-                custom_elements: [{ "content:encoded": node.html }],
-              });
-            });
-          },
-          query: `
-            {
-              allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] },
-              ) {
-                nodes {
-                  excerpt
-                  html
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    date
-                  }
-                }
-              }
-            }
-          `,
-          output: "/rss.xml",
-        },
-      ],
-    },
-  },
+  // {
+  //   resolve: `gatsby-plugin-feed`,
+  //   options: {
+  //     query: `
+  //       {
+  //         site {
+  //           siteMetadata {
+  //             title
+  //             description
+  //             siteUrl
+  //             site_url: siteUrl
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     feeds: [
+  //       {
+  //         serialize: ({ query: { site, allMarkdownRemark } }) => {
+  //           return allMarkdownRemark.nodes.map(node => {
+  //             return Object.assign({}, node.frontmatter, {
+  //               description: node.excerpt,
+  //               date: node.frontmatter.date,
+  //               url: site.siteMetadata.siteUrl + node.fields.slug,
+  //               guid: site.siteMetadata.siteUrl + node.fields.slug,
+  //               custom_elements: [{ "content:encoded": node.html }],
+  //             });
+  //           });
+  //         },
+  //         query: `
+  //           {
+  //             allMdx(
+  //               sort: { order: DESC, fields: [frontmatter___date] },
+  //             ) {
+  //               nodes {
+  //                 excerpt
+  //                 html
+  //                 fields {
+  //                   slug
+  //                 }
+  //                 frontmatter {
+  //                   title
+  //                   date
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         `,
+  //         output: "/rss.xml",
+  //       },
+  //     ],
+  //   },
+  // },
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -111,7 +133,7 @@ const plugins = [
       background_color: `#ffffff`,
       theme_color: `#663399`,
       display: `minimal-ui`,
-      icon: `src/asstes/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
     },
   },
   `gatsby-plugin-react-helmet`,

@@ -1,8 +1,15 @@
+import { MdxComponent } from "@src/lib/utils/mdxUtils";
+
 export interface Post {
   id: string;
-  html: string;
+  body: string;
   excerpt: string;
   frontmatter: FrontMatter;
+}
+
+export interface Tag {
+  fieldValue: string;
+  totalCount?: number;
 }
 
 export interface Author {
@@ -23,4 +30,10 @@ export interface FrontMatter {
 export interface PostNavMetaData {
   fields: MDFields;
   frontmatter: FrontMatter;
+}
+
+export interface TableContent {
+  url: string;
+  title: string;
+  items: TableContent[];
 }
