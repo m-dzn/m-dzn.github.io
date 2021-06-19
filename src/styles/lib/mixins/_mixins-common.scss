@@ -44,7 +44,7 @@
   }
 }
 
-@mixin absolute($vertical, $horizontal) {
+@mixin absolute-zero($vertical, $horizontal) {
   position: absolute;
 
   @if $vertical == bottom {

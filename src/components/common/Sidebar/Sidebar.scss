@@ -1,6 +1,6 @@
 @import "@src/styles/lib.scss";
 
-$color-sidebar-background: $color-gray-950;
+$color-sidebar-background: rgba(0, 0, 0, 0.87);
 $color-sidebar-menu-hover: $color-overlay-shade;
 $color-sidebar-highlight: $color-primary;
 
@@ -8,7 +8,7 @@ $sidebar-logo-size: 3.2rem;
 $sidebar-icon-size: $icon-size;
 $sidebar-icon-color: $color-primitive-white;
 
-.sidebar {
+#sidebar {
   background-color: $color-sidebar-background;
   width: $sidebar-width;
 
@@ -19,10 +19,14 @@ $sidebar-icon-color: $color-primitive-white;
   & a {
     color: $sidebar-icon-color;
   }
+
+  transition: $transition-400;
 }
 
 .sidebar__menu > li {
   @include flex-center;
+  position: relative;
+
   width: $sidebar-width;
   height: $sidebar-width;
   cursor: pointer;
@@ -39,22 +43,82 @@ $sidebar-icon-color: $color-primitive-white;
   }
 }
 
-.sidebar__menu > li.logo {
-  border-bottom: 0.1rem solid $color-line-dark-gray;
+.sidebar__menu > li {
+  &.logo {
+    border-bottom: 0.1rem solid $color-line-dark-gray;
 
-  & img {
-    width: $sidebar-logo-size;
-    height: $sidebar-logo-size;
+    & img {
+      width: $sidebar-logo-size;
+      height: $sidebar-logo-size;
 
-    &:hover {
-      color: $color-secondary;
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
+
+  &.sidebar__search {
+    display: none;
+  }
+}
+
+.sidebar__menu-label {
+  display: none;
+}
+
+.sidebar__close {
+  border: none;
+  outline: none;
+  display: none;
+  position: absolute;
+  top: $spacing-8;
+  left: $spacing-8;
+  background: transparent;
+  color: $color-font-white;
 }
 
 // TODO: Sidebar 모바일용 Right Nav Drawer 구현
 @include mobile {
-  .sidebar {
-    display: none;
+  #sidebar {
+    z-index: $z-index-sidebar;
+    position: fixed;
+    top: 0;
+    right: -30rem;
+    bottom: 0;
+
+    width: 30rem;
+    padding-top: $spacing-56;
+
+    & > ul,
+    & li {
+      width: 100%;
+    }
+
+    &.open {
+      right: 0;
+    }
+  }
+
+  .sidebar__menu > li {
+    & > a > svg {
+      position: absolute;
+      left: $spacing-56;
+    }
+    &.logo {
+      display: none;
+    }
+
+    &.sidebar__search {
+      @include flex-center;
+      padding: 0 $spacing-32;
+    }
+  }
+
+  .sidebar__menu-label {
+    display: inline-block;
+  }
+
+  .sidebar__close {
+    display: block;
   }
 }

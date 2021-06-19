@@ -9,6 +9,10 @@
 
   display: flex;
   justify-content: space-between;
+
+  & .hamburger {
+    display: none;
+  }
 }
 
 .site-nav__logo {
@@ -26,5 +30,15 @@
 @include mobile {
   .site-nav {
     padding: 0 $grid-margin-horizontal-mobile;
+
+    & .hamburger {
+      @include flex-center;
+      height: 100%;
+    }
+  }
+
+  // TODO: 모바일용 Right Nav Drawer 구현
+  .site-nav__search {
+    display: none;
   }
 }

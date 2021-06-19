@@ -6,16 +6,19 @@ import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 interface sidebarRoutesProps {
   icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
   to: string;
+  label: string;
 }
 
 const sidebarRoutes: sidebarRoutesProps[] = [
   {
     icon: HomeIcon,
     to: "/",
+    label: "Home",
   },
   {
     icon: LocalOfferIcon,
     to: "/tags",
+    label: "Tags",
   },
 ];
 

@@ -13,7 +13,7 @@ const Tags = ({ data, pageContext }) => {
   const posts = data.allMdx.nodes;
 
   return (
-    <Layout pageTitle={tag} siteMetadata={siteMetadata}>
+    <Layout pageTitle={`#${tag}`} siteMetadata={siteMetadata}>
       <Select>
         <option>Newest</option>
         <option>Most viewed</option>

@@ -61,6 +61,7 @@ $color-line-black: $color-primitive-black;
 $color-line-dark-gray: $color-gray-800;
 $color-line-gray: $color-gray-600;
 $color-line-light-gray: $color-gray-400;
+$color-line-white: $color-primitive-white;
 
 // Font
 $color-font-black: $color-primitive-black;
@@ -141,10 +142,16 @@ $grid-column: 7rem;
 $grid-row-height: 45vh;
 
 /* ----------------------------------------
+                  z-index
+----------------------------------------*/
+$z-index-sidebar: 700;
+
+/* ----------------------------------------
                 Animation
 ----------------------------------------*/
 // transition
 $transition-200: all 200ms;
+$transition-400: all 400ms;
 
 /* ----------------------------------------
                 Mark Down
