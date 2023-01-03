@@ -1,15 +1,14 @@
 const config = {
   pathPrefix: "",
-  avatar:
-    "https://xkxqjlzvieat874751.gcdn.ntruss.com/1/2021/1295/11295af895f1035974961bc3a4e98625fbd00edf1b4af0c364f24863617dc6275_o_st.jpg",
+  avatar: "",
   siteMetadata: {
     title: `Mechanism Design`,
     author: {
-      name: `Jamong Jelly`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Kyeongho Yang`,
+      summary: ``,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://jamongjelly.github.io/`,
+    description: `기술로 많은 이들의 삶의 메커니즘을 개선하는 데 기여하고 싶은 한 개발자의 블로그입니다.`,
+    siteUrl: `https://m-dzn.github.io/`,
     social: {
       twitter: `kylemathews`,
     },

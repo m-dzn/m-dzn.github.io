@@ -92,7 +92,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     fileAbsolutePath.match(/index\.mdx?$/)
   );
   defaultPosts.forEach(({ node }) => {
-    node.frontmatter.tags.forEach(tag => {
+    node.frontmatter.tags?.forEach(tag => {
       if (allTags.indexOf(tag) === -1) allTags.push(tag);
     });
   });
